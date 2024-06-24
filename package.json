@@ -11,8 +11,15 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "@primevue/themes": "^4.0.0-rc.1",
+    "@vue-stripe/vue-stripe": "^4.5.0",
+    "axios": "^1.7.2",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.0.0-rc.1",
+    "vee-validate": "^4.13.1",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
@@ -21,6 +28,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "prettier": "^3.2.5",
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1",
     "vite": "^5.2.8"
   }
 }
