@@ -8,11 +8,11 @@
                 seatingInfo: {},
                 emptySeatingInfo: [
                     {
-                        label: 'Table du Sud',
+                        label: 'Table du Nord',
                         seats: []
                     },
                     {
-                        label: 'Table du Nord',
+                        label: 'Table du Sud',
                         seats: []
                     }
                 ],
@@ -48,7 +48,7 @@
                     this.selectedSeats.add(seat)
                 }
                 
-                this.$emit('changedSelectedSeats', Array.from(this.selectedSeats).map((seat)=> seat.seatNum));
+                this.$emit('changedSelectedSeats', Array.from(this.selectedSeats));
             }
         },
         async mounted() {
@@ -108,6 +108,19 @@
             <div class="table-info__table dss-fs-nmi">
                 {{table.label}}
             </div>
+            <!-- <template #fallback>
+                <Skeleton v-for="(seat, index) in table.seats" 
+                    shape="circle" size="clamp(30px, 2.5vw, 60px)" class="mr-2 table-info__seat table-info__seat-skeleton"
+                    :class="{
+                        left: index%2==1,
+                        right: index%2==0 && index !== 0,
+                        head: index == 0,
+                        foot: index == table.seats.length - 1 && table.seats.length%2 == 0
+                    }"    
+                >
+                </Skeleton>
+            </template> -->
+            
             <div v-for="(seat, index) in table.seats" 
                 class="table-info__seat" 
                 @click="selectSeat(seat, $event)"
@@ -122,30 +135,13 @@
                 }"
             >
                 <div class="table-info__seat-number">
-                    <!-- {{ seat.label }} -->
+                    {{ seat.label }}
                 </div>
                 <Popover v-if="isReserved(seat)" :ref="`reservedInfo${seat.seatNum}`" class="table-info__seat-info" appendTo: self>
                     <div>
                         Reserved by {{ seat.reservationName }}
                     </div>
                 </Popover>
-            </div>
-        </div>
-    </div>
-    <div class="selected-info">
-        <div class="selected-info__heading">
-            Selected seats
-        </div>
-        <div class="selected-info__wrapper">
-            <div v-if="!selectedSeats.size">
-                None
-            </div>
-            <div 
-                v-for="seat in selectedSeats"
-                class="selected-info__seat"
-                value="1" 
-                >
-                <Badge severity="secondary" size="large" :value="seat.label"></Badge>
             </div>
         </div>
     </div>
@@ -202,6 +198,8 @@
             }
         }
 
+        
+
         &__seat {
         
             margin: $seatToTableGap $betweenSeatGap;
@@ -221,6 +219,11 @@
 
             &-info {
                 z-index: 1;
+            }
+
+            &-number {
+                visibility: hidden;
+                color: white;
             }
             
             &.selected {
@@ -275,31 +278,19 @@
 
             &:hover {
                 cursor: pointer;
+                .table-info__seat-number{
+                    visibility: unset;
+                }
             }
 
-        }
-    }
+            &-skeleton {
+                border: none;
+                &:hover {
+                    background-color: var(--p-skeleton-background) !important;
+                    cursor: unset;
+                }
+            }
 
-    .selected-info {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
-        transition: all ease-in-out .2s;
-        max-width: 766px;
-        margin: 10px auto;
-
-        &__heading {
-            color: var(--p-floatlabel-focus-color);
-            font-size: 12px;
-            padding-left: .75em;
-        }
-        
-        &__wrapper {
-            display: flex;
-            flex-direction: row;
-            gap: 1em;
         }
     }
     

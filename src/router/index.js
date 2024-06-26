@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
+import LandingPage from '../components/LandingPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,6 +8,11 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      component: LandingPage
+    },
+    {
+      path: '/19028hjksadjknas12has',
+      name: 'main',
       component: HelloWorld
     }
   ]
