@@ -1,11 +1,17 @@
+<script setup>
+  import { useI18n } from 'vue-i18n'
+  const { t } = useI18n()
+</script>
+
 <template>
-    <div class="d-flex justify-center align-center" style="height: 100vh">
+    <div class="d-flex justify-center align-center w100" style="height: 100%; overflow: hidden; position: absolute; top:0; left:0">
         <div class="logo dss-fs-nmi">
             <img src="../assets/wab-logo.jpg" alt="logo" />
-            Coming Soon
+            {{ t("home.created_by") }}
             <a href="https://www.instagram.com/wineandbouffe/">
-                Instagram
+              {{ t("home.header") }}
             </a>
+            <LanguageSwitcher></LanguageSwitcher>
         </div>
     </div>
 </template>

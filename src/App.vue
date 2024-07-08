@@ -6,6 +6,5 @@
         <router-view></router-view>
       </transition>
     </div>
-    <AppFooter></AppFooter>
 </template>
 

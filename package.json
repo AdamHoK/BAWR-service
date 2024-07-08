@@ -11,19 +11,23 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@primevue/themes": "^4.0.0-rc.1",
     "@vue-stripe/vue-stripe": "^4.5.0",
     "axios": "^1.7.2",
+    "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.0-rc.1",
     "vee-validate": "^4.13.1",
     "vue": "^3.4.27",
+    "vue-i18n": "^9.13.1",
     "vue-router": "^4.3.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
     "@primevue/auto-import-resolver": "^4.0.0-beta.5",
     "@rushstack/eslint-patch": "^1.8.0",
+    "@stripe/stripe-js": "^4.0.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.57.0",
@@ -32,6 +36,7 @@
     "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
     "unplugin-vue-components": "^0.27.2",
-    "vite": "^5.2.8"
+    "vite": "^5.2.8",
+    "vue-stripe-js": "^1.0.2"
   }
 }
