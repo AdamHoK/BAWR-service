@@ -6,7 +6,9 @@
     
     import { storeToRefs } from 'pinia'
     import {useSelectedSeatsStore} from '../stores/selectedSeats';
-    
+
+    // const NODE_URL = 'http://localhost:8080';
+    const NODE_URL = 'https://bawr-service-server.vercel.app';
     const selectedSeatsStore = useSelectedSeatsStore();
     const { selectedSeats } = storeToRefs(selectedSeatsStore)
 
@@ -55,9 +57,6 @@
     const [email] = defineField('email');
     const [seats, seatsAttrs] = defineField('seats');
     mapSelectedToField(selectedSeats.value)
-    
-    const NODE_URL = 'http://localhost:8080';
-
 
     function ticketPrice(ticketId){
         let matchingTicket = ticketItems.find((ticketType) => ticketType.id === ticketId);
@@ -151,7 +150,7 @@
 
                 <div class="selected-info">
                 <div class="selected-info__heading">
-                    Selected seats
+                  {{ $t('table_info.selected_seats') }}
                 </div>
                 <div class="selected-info__wrapper">
                     <div v-if="!selectedSeats.length">

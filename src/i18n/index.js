@@ -6,7 +6,8 @@ const messages = {
       north_table: 'North Table',
       south_table: 'South Table',
       reserved_by: 'Reserved By',
-      random: 'Random'
+      random: 'Random',
+      selected_seats: 'Selected seats'
     },
     locale: {
       'en' : 'English',
@@ -18,7 +19,8 @@ const messages = {
       north_table: 'Table du Nord',
       south_table: 'Table du Sud',
       reserved_by: 'Reservé(e) par',
-      random: 'Aléatoire'
+      random: 'Aléatoire',
+      selected_seats: 'Places selectionnés'
     },
     locale: {
       'en' : 'Anglais',

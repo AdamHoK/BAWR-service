@@ -1,6 +1,7 @@
 <script>
     import axios from 'axios';
-    const NODE_URL = 'http://localhost:8080';
+    // const NODE_URL = 'http://localhost:8080';
+    const NODE_URL = 'https://bawr-service-server.vercel.app';
     import {useSelectedSeatsStore} from '../stores/selectedSeats';
     import { storeToRefs } from 'pinia'
     export default {
