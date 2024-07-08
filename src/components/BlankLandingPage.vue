@@ -7,11 +7,10 @@
     <div class="d-flex justify-center align-center w100" style="height: 100%; overflow: hidden; position: absolute; top:0; left:0">
         <div class="logo dss-fs-nmi">
             <img src="../assets/wab-logo.jpg" alt="logo" />
-            {{ t("home.created_by") }}
+            {{ t("landing_page.coming_soon") }}
             <a href="https://www.instagram.com/wineandbouffe/">
-              {{ t("home.header") }}
+              Instagram
             </a>
-            <LanguageSwitcher></LanguageSwitcher>
         </div>
     </div>
 </template>

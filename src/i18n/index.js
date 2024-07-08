@@ -2,6 +2,9 @@ import { createI18n } from "vue-i18n";
 
 const messages = {
   en: {
+    landing_page: {
+      coming_soon: "Coming Soon"
+    },
     table_info: {
       north_table: 'North Table',
       south_table: 'South Table',
@@ -15,6 +18,9 @@ const messages = {
     },
   },
   fr: {
+    landing_page: {
+      coming_soon: "Bientôt disponible"
+    },
     table_info: {
       north_table: 'Table du Nord',
       south_table: 'Table du Sud',
